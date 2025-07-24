@@ -66,18 +66,16 @@ void reset() {
 //  mpu6050_init();
   FLASH_ACR = 0x12;
   while (1) {
-    //I2C1.CR1 |= 1 << 8;
+    I2C1.CR1 |= 1 << 8;
     if (USART1.SR & 0x00000020) {
       uart1_receive(1, uart1_rx.data);
       uart1_send(1, uart1_rx.data);
-      // uart1_send(1,&uart1_rx.data[uart1_rx.tail]);
-      uart1_rx.tail += 1;
-      u8 a;
-      a = -1;
-      uart1_send(1, &a);
+     u8 a;
+     a = -1;
+     uart1_send(1, &a);
     }
-//	i16 accel[3],gyro[3];
-//	float temp;
+	i16 accel[3],gyro[3];
+	float temp;
     //mpu6050_read(accel,gyro,temp);
     //uart1_send(6,(u8*)accel);
     GPIOC.ODR = TIM2.CNT;
