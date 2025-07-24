@@ -67,6 +67,20 @@ typedef struct {
 } usart;
 #define USART1 sfr(usart, 0x40013800)
 
+typedef struct{
+	u32 CR1;
+	u32 CR2;
+	u32 OAR1;
+	u32 OAR2;
+	u32 DR;
+	u32 SR1;
+	u32 SR2;
+	u32 CCR;
+	u32 TRISE;
+} i2c;
+#define I2C1 sfr(i2c,0x40005400)
+#define I2C2 sfr(i2c,0x40005800)
+
 typedef struct {
   u32 IMR;
   u32 EMR;
@@ -136,3 +150,5 @@ typedef struct {
 } dma;
 #define DMA1 sfr(dma, 0x40020000)
 #define DMA2 sfr(dma, 0x40020400)
+
+

@@ -17,10 +17,10 @@ void uart1_send(u32 length,volatile u8* data) {
   DMA1.CCR4 |= 1;
 }
 
-void uart1_receive(u32 length) {
+void uart1_receive(u32 length,volatile u8* data) {
   DMA1.CCR5 &= 0xfffffffe;
   DMA1.CNDTR5 = length;
-  DMA1.CMAR5 = uart1_rx.data;
+  DMA1.CMAR5 = data;
   //DMA1.CMAR5 = &uart1_rx.data[uart1_rx.head];
   //uart1_rx.head += length;
   DMA1.CCR5 |= 1;
