@@ -34,7 +34,6 @@ obj/%.o: src/%.c
 clean :
 	rm -rf obj/**/*.*
 
-
 .PHONY: all clean 
 
 

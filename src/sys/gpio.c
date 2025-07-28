@@ -8,4 +8,7 @@ void gpio_init() {
   GPIOC.CRL = 0x33333333;
   GPIOC.CRH = 0x33333333;
   GPIOC.ODR = 0;
+
+  AFIO.MAPR = 0;
+
 }

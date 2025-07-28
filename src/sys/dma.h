@@ -8,4 +8,6 @@ typedef struct{
 }uart_s;
 extern uart_s uart1_rx;
 extern uart_s uart1_tx;
+extern u8 i2c1_tx[50];
+extern u8 i2c1_rx[14];
 void dma1_init();

@@ -98,6 +98,16 @@ typedef struct {
 #define GPIOB sfr(gpio, 0x40010c00)
 #define GPIOC sfr(gpio, 0x40011000)
 
+typedef struct{
+	u32 EVCR;
+	u32 MAPR;
+	u32 EXITCR1;
+	u32 EXITCR2;
+	u32 EXITCR3;
+	u32 EXITCR4;
+}afio;
+#define AFIO sfr(afio,0x40010000)
+
 #define FLASH 0x40022000
 #define FLASH_ACR (*(volatile u32 *)FLASH)
 
